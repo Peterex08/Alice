@@ -1,0 +1,3383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="alice_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.08837 -0.24615 0.057012"
+        rpy="0 0 0" />
+      <mass
+        value="7.3588" />
+      <inertia
+        ixx="0.044398"
+        ixy="0.00031216"
+        ixz="-7.2179E-05"
+        iyy="0.030895"
+        iyz="-0.0001821"
+        izz="0.04065" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="neck">
+    <inertial>
+      <origin
+        xyz="-0.0022179 0.030089 0.001914"
+        rpy="0 0 0" />
+      <mass
+        value="0.017377" />
+      <inertia
+        ixx="3.1942E-06"
+        ixy="-2.071E-09"
+        ixz="-1.0241E-08"
+        iyy="1.3823E-06"
+        iyz="-9.711E-08"
+        izz="3.0628E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/neck.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_neck_joint"
+    type="continuous">
+    <origin
+      xyz="0.059993 -0.23138 0.2836"
+      rpy="1.4889 0.014177 -1.5353" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck" />
+    <axis
+      xyz="0.0045776 0.99835 0.057258" />
+  </joint>
+  <link
+    name="head">
+    <inertial>
+      <origin
+        xyz="-0.00203642682279573 0.0360101517913343 0.000137795216544494"
+        rpy="0 0 0" />
+      <mass
+        value="0.0745200706632678" />
+      <inertia
+        ixx="9.25701424640244E-06"
+        ixy="-1.73655076010235E-07"
+        ixz="6.76742834332421E-07"
+        iyy="4.68146967314949E-05"
+        iyz="2.12872262024344E-08"
+        izz="4.96607483740689E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_head_joint"
+    type="continuous">
+    <origin
+      xyz="0.000201921501672531 0.0440381817067889 0.00252570254383764"
+      rpy="0.0606487610542147 0.0117235285078409 -0.00414243012164736" />
+    <parent
+      link="neck" />
+    <child
+      link="head" />
+    <axis
+      xyz="0.997676704620568 0 -0.068126302244019" />
+  </joint>
+  <link
+    name="r_arm">
+    <inertial>
+      <origin
+        xyz="0.00105554931606175 -0.00664056289771075 -0.0412447124086693"
+        rpy="0 0 0" />
+      <mass
+        value="0.0926564041629871" />
+      <inertia
+        ixx="0.000342623814187767"
+        ixy="-6.84668471199051E-10"
+        ixz="-2.53019741407712E-14"
+        iyy="0.000346653844887253"
+        iyz="-2.41376911760168E-09"
+        izz="1.79288205152714E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_r_arm_joint"
+    type="continuous">
+    <origin
+      xyz="0.0799685862265506 -0.00168186725333034 0.198316313851525"
+      rpy="-0.0184950851490701 0.0185706695403267 -3.11709490213378" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_arm" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="r_arm_haste">
+    <inertial>
+      <origin
+        xyz="-0.0104824477963583 2.97440344056155E-10 -0.0519359079983351"
+        rpy="0 0 0" />
+      <mass
+        value="0.29579438568083" />
+      <inertia
+        ixx="0.000366532786259131"
+        ixy="1.1530582415728E-11"
+        ixz="-1.35475763498184E-11"
+        iyy="0.000366379151624259"
+        iyz="-3.08401415192827E-12"
+        izz="1.4856097578156E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_arm_r_arm_haste_joint"
+    type="continuous">
+    <origin
+      xyz="0.0400000000000022 -0.00343631661918238 0.0429999999999985"
+      rpy="-0.189189688126403 0 1.5707963267949" />
+    <parent
+      link="r_arm" />
+    <child
+      link="r_arm_haste" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="r_arm_atuador">
+    <inertial>
+      <origin
+        xyz="0.0356691542370998 0.0693117788416368 -0.0199148887081458"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667272850943" />
+      <inertia
+        ixx="0.000769199482800856"
+        ixy="0.000110911482039344"
+        ixz="1.01020678127389E-06"
+        iyy="0.000144242198970247"
+        iyz="-1.41252791052749E-06"
+        izz="0.000845630568822347" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm_atuador.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm_atuador.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_arm_haste_r_arm_atuador_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.030294 0.018034 -0.28937"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="r_arm_haste" />
+    <child
+      link="r_arm_atuador" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_arm_hand">
+    <inertial>
+      <origin
+        xyz="0.160572075000333 -0.0170201427972176 0.0533461538222411"
+        rpy="0 0 0" />
+      <mass
+        value="0.0599290865935393" />
+      <inertia
+        ixx="3.37331908273315E-05"
+        ixy="1.41608090936355E-10"
+        ixz="-6.38120027925854E-05"
+        iyy="0.000245305868179011"
+        iyz="-4.35454705363824E-10"
+        izz="0.000214125690804956" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm_hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_arm_hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_arm_r_arm_hand_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.256000000000005"
+      rpy="0 0.671089501832755 0" />
+    <parent
+      link="r_arm" />
+    <child
+      link="r_arm_hand" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="l_arm">
+    <inertial>
+      <origin
+        xyz="0.000965659745977732 0.0266329545235692 -0.0408213754286924"
+        rpy="0 0 0" />
+      <mass
+        value="0.0926564042645591" />
+      <inertia
+        ixx="0.000342623814196758"
+        ixy="-6.84668610747729E-10"
+        ixz="-2.22834034726691E-14"
+        iyy="0.000346653844888635"
+        iyz="-2.41376903265245E-09"
+        izz="1.79288205215347E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_l_arm_joint"
+    type="continuous">
+    <origin
+      xyz="0.090893 -0.44135 0.19018"
+      rpy="-0.018642 0.12707 -3.1191" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_arm" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="l_arm_haste">
+    <inertial>
+      <origin
+        xyz="0.010488612988887 2.79884310172562E-10 -0.0519359080556194"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794384627824" />
+      <inertia
+        ixx="0.000366532786078067"
+        ixy="1.15269726433688E-11"
+        ixz="-1.36404394496468E-11"
+        iyy="0.000366379151399627"
+        iyz="-2.70688350044972E-12"
+        izz="1.48560975706725E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_arm_l_arm_haste_joint"
+    type="continuous">
+    <origin
+      xyz="0.0389999999997431 0.0236836876121146 0.0437610578488319"
+      rpy="-0.192771974460667 0 1.57079632679476" />
+    <parent
+      link="l_arm" />
+    <child
+      link="l_arm_haste" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="l_arm_atuador">
+    <inertial>
+      <origin
+        xyz="0.0356691541524509 0.0693117788495769 -0.0199148886530096"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667268641515" />
+      <inertia
+        ixx="0.000769199479142963"
+        ixy="0.00011091148140267"
+        ixz="1.01020589444691E-06"
+        iyy="0.000144242197141407"
+        iyz="-1.4125276448685E-06"
+        izz="0.000845630564699693" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm_atuador.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm_atuador.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_arm_haste_l_arm_atuador_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.0093234 0.018034 -0.28891"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="l_arm_haste" />
+    <child
+      link="l_arm_atuador" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_arm_hand">
+    <inertial>
+      <origin
+        xyz="0.153667753097398 0.0221518441654424 0.00074326366373352"
+        rpy="0 0 0" />
+      <mass
+        value="0.0867761995198115" />
+      <inertia
+        ixx="1.57676230172919E-05"
+        ixy="4.9598517152288E-17"
+        ixz="1.44622901093112E-06"
+        iyy="0.000345128160848715"
+        iyz="-9.15802715609647E-10"
+        izz="0.000334226299231862" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm_hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_arm_hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_arm_l_arm_hand_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0135696436824156 -0.255238942151415"
+      rpy="0 0.349852680955738 0" />
+    <parent
+      link="l_arm" />
+    <child
+      link="l_arm_hand" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="r_r_up_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="1.24206200879939E-15 0.0159513183228349 -0.0106334709811427"
+        rpy="0 0 0" />
+      <mass
+        value="0.0374531817283405" />
+      <inertia
+        ixx="7.83313520903203E-06"
+        ixy="-2.31478222616839E-20"
+        ixz="1.32018025763463E-21"
+        iyy="1.26168521569069E-05"
+        iyz="-1.36029851734345E-21"
+        izz="1.09040183718146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_r_r_up_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="0.173625424036589 -0.0533704351723456 -0.204668777972201"
+      rpy="-0.0248377368616341 0.00775941429375498 -1.5456884239509" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_r_up_up_actuator_lig" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="r_r_up_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.0456283894289E-09 2.46294262762348E-10 -0.0519359077832608"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794389602472" />
+      <inertia
+        ixx="0.000366532786980374"
+        ixy="1.15374107371039E-11"
+        ixz="-1.19441299879482E-11"
+        iyy="0.000366379152481615"
+        iyz="-2.54682669231659E-12"
+        izz="1.4856097587872E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_actuator_lig_r_r_up_leg_haste_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0159513183228349 -0.0250000000000015"
+      rpy="-0.479195182049125 0 0" />
+    <parent
+      link="r_r_up_up_actuator_lig" />
+    <child
+      link="r_r_up_leg_haste" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="r_r_up_leg_atuador">
+    <inertial>
+      <origin
+        xyz="0.0356691569701805 0.0693117699223126 -0.0199148954020083"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667402282664" />
+      <inertia
+        ixx="0.00076919963368071"
+        ixy="0.00011091153025367"
+        ixz="1.01024816360864E-06"
+        iyy="0.000144242286042278"
+        iyz="-1.41258312707026E-06"
+        izz="0.0008456306945944" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_leg_atuador.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_leg_atuador.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_up_leg_haste_r_r_up_leg_atuador_joint"
+    type="prismatic">
+    <origin
+      xyz="0.020068 -0.017749 -0.26442"
+      rpy="1.5708 0 1.5851" />
+    <parent
+      link="r_r_up_leg_haste" />
+    <child
+      link="r_r_up_leg_atuador" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_r_up_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-1.98452365651747E-15 0.00280195446037601 0.0174205238596725"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.8275178158697E-06"
+        ixy="4.81749988750883E-21"
+        ixz="-4.44692297308508E-21"
+        iyy="1.3705115727033E-05"
+        iyz="2.02832723749368E-07"
+        izz="1.48499274386226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_up_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_up_leg_atuador_r_r_up_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0.031177 -0.018522 -0.019648"
+      rpy="2.8454 1.5708 -0.040242" />
+    <parent
+      link="r_r_up_leg_atuador" />
+    <child
+      link="r_r_up_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_leg_top">
+    <inertial>
+      <origin
+        xyz="-0.0684860675849304 0.00072322043317874 0.0303968831716751"
+        rpy="0 0 0" />
+      <mass
+        value="0.13877351009457" />
+      <inertia
+        ixx="3.21824561001289E-05"
+        ixy="-5.01670816778766E-08"
+        ixz="-2.10996777004966E-06"
+        iyy="0.00015545187535667"
+        iyz="2.62535054285737E-07"
+        izz="0.000166475604224709" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_top.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_top.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_r_leg_top_joint"
+    type="continuous">
+    <origin
+      xyz="0.0527014719598399 -0.117596905774812 -0.194252841009849"
+      rpy="3.09523607474555 -0.0248369889900293 -3.11629198675053" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_leg_top" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="r_r_front_up_leg_bar">
+    <inertial>
+      <origin
+        xyz="-0.0282099564893015 0.0260726792525423 0.165988589210113"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157366743902207"
+        ixy="-6.61700621015389E-07"
+        ixz="2.19794419948878E-05"
+        iyy="0.000152303317500219"
+        iyz="6.01713534874014E-07"
+        izz="3.36814209277911E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_front_up_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_front_up_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_top_r_r_front_up_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0146822575953638 0.0227510644484675 0.0494731961646777"
+      rpy="-0.00179240769788521 0.376656485455842 -0.00940461218314764" />
+    <parent
+      link="r_leg_top" />
+    <child
+      link="r_r_front_up_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135591213" />
+  </joint>
+  <link
+    name="r_back_up_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.0175150560183062 -0.00312197926205587 -0.131328723953167"
+        rpy="0 0 0" />
+      <mass
+        value="0.106045030354" />
+      <inertia
+        ixx="0.000145683712603249"
+        ixy="4.43475391208647E-07"
+        ixz="1.86710859461769E-05"
+        iyy="0.000134791655009794"
+        iyz="-2.54785094666491E-06"
+        izz="2.76955943465264E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_back_up_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_back_up_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_top_r_back_up_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.144682257595355 0.00118847567795555 0.0499858732599816"
+      rpy="3.14153378304101 0.0702982984042361 -0.00167418814633325" />
+    <parent
+      link="r_leg_top" />
+    <child
+      link="r_back_up_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135591231" />
+  </joint>
+  <link
+    name="r_leg_middle">
+    <inertial>
+      <origin
+        xyz="0.0546093882210392 0.0218726037803204 0.37182495623666"
+        rpy="0 0 0" />
+      <mass
+        value="0.139537136554648" />
+      <inertia
+        ixx="6.01628787623978E-05"
+        ixy="-5.49246590276038E-12"
+        ixz="-2.31060142992512E-10"
+        iyy="7.5952209111159E-05"
+        iyz="-4.8273455121586E-07"
+        izz="5.56485074670856E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_back_up_leg_bar_r_leg_middle_joint"
+    type="fixed">
+    <origin
+      xyz="0.033308707160086 -0.0285840269311472 -0.654109777039992"
+      rpy="-5.88705488029949E-05 0.0702982984060446 -0.0016741881463759" />
+    <parent
+      link="r_back_up_leg_bar" />
+    <child
+      link="r_leg_middle" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_r_front_down_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.0122359795246231 -0.0247989432223971 -0.0947711489555758"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.00015736948557474"
+        ixy="1.70716041833397E-06"
+        ixz="2.19231194069371E-05"
+        iyy="0.000151977733318782"
+        iyz="-6.24122497521004E-06"
+        izz="3.40097467815713E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_front_down_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_front_down_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_middle_r_r_front_down_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="0.109527743199697 0.000264260056189181 0.35233336274124"
+      rpy="-0.00107310052092794 0.294951458606704 -0.00722359563057391" />
+    <parent
+      link="r_leg_middle" />
+    <child
+      link="r_r_front_down_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135591124" />
+  </joint>
+  <link
+    name="r_r_bottom_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-1.21985754830689E-14 -0.00469804553958375 -0.0216049713263302"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.82751781586969E-06"
+        ixy="1.92011781230709E-19"
+        ixz="2.28857714436271E-19"
+        iyy="1.37051157270321E-05"
+        iyz="2.02832723746922E-07"
+        izz="1.48499274386235E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_bottom_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_bottom_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_front_down_leg_bar_r_r_bottom_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="-0.016459 -0.022942 -0.023758"
+      rpy="1.4174 0.047157 1.5672" />
+    <parent
+      link="r_r_front_down_leg_bar" />
+    <child
+      link="r_r_bottom_up_actuator_lig" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="r_r_down_leg_actuator">
+    <inertial>
+      <origin
+        xyz="0.0356691568105079 0.069311769951125 -0.0199148954977245"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667408627996" />
+      <inertia
+        ixx="0.000769199640409019"
+        ixy="0.000110911531669153"
+        ixz="1.01024837978782E-06"
+        iyy="0.000144242287611475"
+        iyz="-1.41258351592556E-06"
+        izz="0.000845630700214476" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_down_leg_actuator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_down_leg_actuator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_bottom_up_actuator_lig_r_r_down_leg_actuator_joint"
+    type="fixed">
+    <origin
+      xyz="-0.019722 -0.032885 -0.01318"
+      rpy="-1.5708 1.3405 1.5708" />
+    <parent
+      link="r_r_bottom_up_actuator_lig" />
+    <child
+      link="r_r_down_leg_actuator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_r_down_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.26603590111518E-09 2.31608093814728E-10 0.0600640921298198"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794387940534" />
+      <inertia
+        ixx="0.000366532786754525"
+        ixy="1.15213172068208E-11"
+        ixz="-1.42613589709317E-11"
+        iyy="0.000366379152201778"
+        iyz="-1.55899382414447E-12"
+        izz="1.48560975947068E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_down_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_down_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_down_leg_actuator_r_r_down_leg_haste_joint"
+    type="prismatic">
+    <origin
+      xyz="0.018034 0.15109 -0.019812"
+      rpy="1.5708 1.5672 3.1416" />
+    <parent
+      link="r_r_down_leg_actuator" />
+    <child
+      link="r_r_down_leg_haste" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_r_bottom_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="0.0430359136613469 0.0487077232807004 0.0397250245910927"
+        rpy="0 0 0" />
+      <mass
+        value="0.0774326485120071" />
+      <inertia
+        ixx="2.68471288412361E-05"
+        ixy="4.83627460260382E-10"
+        ixz="-2.17499967139127E-07"
+        iyy="5.54855411611868E-05"
+        iyz="-1.65195597120609E-11"
+        izz="5.52663489879863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_r_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_down_leg_haste_r_r_bottom_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0.048708 0.063437 0.1551"
+      rpy="-3.1416 -0.37208 -1.5708" />
+    <parent
+      link="r_r_down_leg_haste" />
+    <child
+      link="r_r_bottom_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_back_down_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.017515056018877 0.00990241958632611 -0.131638395071211"
+        rpy="0 0 0" />
+      <mass
+        value="0.106045030353999" />
+      <inertia
+        ixx="0.000145683712603306"
+        ixy="4.43475391204274E-07"
+        ixz="1.86710859459955E-05"
+        iyy="0.000134791655009793"
+        iyz="-2.54785094666598E-06"
+        izz="2.76955943464689E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_back_down_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_back_down_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_middle_r_back_down_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.020472 0.0083726 0.35214"
+      rpy="-0.0010731 0.29495 -0.0072236" />
+    <parent
+      link="r_leg_middle" />
+    <child
+      link="r_back_down_leg_bar" />
+    <axis
+      xyz="0 0.99972 -0.02377" />
+  </joint>
+  <link
+    name="r_leg_bottom">
+    <inertial>
+      <origin
+        xyz="0.096169869228656 0.0157063139556546 0.0703968831947185"
+        rpy="0 0 0" />
+      <mass
+        value="0.138773510111506" />
+      <inertia
+        ixx="3.2182456100089E-05"
+        ixy="-5.01670806607721E-08"
+        ixz="-2.10996775158804E-06"
+        iyy="0.000155451875356304"
+        iyz="2.62535054361401E-07"
+        izz="0.000166475604225076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_bottom.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_bottom.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_back_down_leg_bar_r_leg_bottom_joint"
+    type="fixed">
+    <origin
+      xyz="0.0476053649374812 -0.00941755452812024 -0.354020443889193"
+      rpy="-0.00107310052091679 -0.294951458608564 0.00722359563061508" />
+    <parent
+      link="r_back_down_leg_bar" />
+    <child
+      link="r_leg_bottom" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_leg_foot">
+    <inertial>
+      <origin
+        xyz="0.0893449769125558 -0.000595282164584446 -0.0242990230013079"
+        rpy="0 0 0" />
+      <mass
+        value="0.530146787359533" />
+      <inertia
+        ixx="0.000353885950422591"
+        ixy="2.08916028232753E-07"
+        ixz="6.14942095843113E-06"
+        iyy="0.000330077199287831"
+        iyz="-4.08136153725103E-07"
+        izz="0.000582436523684837" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_leg_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_bottom_r_leg_foot_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0149830935220265 0.0400000000000161"
+      rpy="0.0201757070661063 0 0" />
+    <parent
+      link="r_leg_bottom" />
+    <child
+      link="r_leg_foot" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="r_l_front_down_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.0122359795256533 0.0125569864416478 -0.095659332174586"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157366743902191"
+        ixy="-6.61700621015599E-07"
+        ixz="2.1979441994935E-05"
+        iyy="0.000152303317500219"
+        iyz="6.01713534874196E-07"
+        izz="3.3681420927808E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_front_down_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_front_down_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_middle_r_l_front_down_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="0.109527743199697 0.0502501333161704 0.351144887063284"
+      rpy="-0.00107310052092781 0.294951458606646 -0.00722359563057234" />
+    <parent
+      link="r_leg_middle" />
+    <child
+      link="r_l_front_down_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.023769513559112" />
+  </joint>
+  <link
+    name="r_l_bottom_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-2.75890421619351E-14 -0.00469804553971986 -0.0214006405890446"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.82751781586971E-06"
+        ixy="4.04352353195522E-19"
+        ixz="6.37789339502886E-20"
+        iyy="1.37051157270332E-05"
+        iyz="2.02832723749809E-07"
+        izz="1.48499274386225E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_bottom_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_bottom_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_front_down_leg_bar_r_l_bottom_up_actuator_lig_joint_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0166609574420919 0.0130475000223118 -0.0246450201157344"
+      rpy="1.41761491587602 -0.000293644800163789 1.57451250408109" />
+    <parent
+      link="r_l_front_down_leg_bar" />
+    <child
+      link="r_l_bottom_up_actuator_lig" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="r_l_down_leg_actuator">
+    <inertial>
+      <origin
+        xyz="0.0356691568064552 0.0693117699754311 -0.0199148954876506"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667408604942" />
+      <inertia
+        ixx="0.000769199640515655"
+        ixy="0.000110911531611499"
+        ixz="1.01024831766424E-06"
+        iyy="0.000144242287550478"
+        iyz="-1.41258338651743E-06"
+        izz="0.0008456307002824" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_down_leg_actuator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_down_leg_actuator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_bottm_up_actuator_lig_r_l_down_leg_actuator_joint"
+    type="fixed">
+    <origin
+      xyz="-0.019648 -0.032987 -0.013062"
+      rpy="-1.5708 1.3345 1.5708" />
+    <parent
+      link="r_l_bottom_up_actuator_lig" />
+    <child
+      link="r_l_down_leg_actuator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_l_down_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.24936289092048E-09 2.23793039655362E-10 0.0600640921280946"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794387900287" />
+      <inertia
+        ixx="0.00036653278674814"
+        ixy="1.15213778802144E-11"
+        ixz="-1.41081362709623E-11"
+        iyy="0.000366379152191658"
+        iyz="-1.45684356489294E-12"
+        izz="1.48560975921901E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_down_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_down_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_down_leg_actuator_r_l_down_leg_haste_joint"
+    type="prismatic">
+    <origin
+      xyz="0.018034 0.14694 -0.019812"
+      rpy="-1.5708 1.5671 0" />
+    <parent
+      link="r_l_down_leg_actuator" />
+    <child
+      link="r_l_down_leg_haste" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_l_bottom_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-0.0348644430470586 -0.0402138039621459 0.00425151457060924"
+        rpy="0 0 0" />
+      <mass
+        value="0.0774326489449657" />
+      <inertia
+        ixx="2.68471284738911E-05"
+        ixy="4.83703390191922E-10"
+        ixz="-2.17499986731374E-07"
+        iyy="5.54855430723513E-05"
+        iyz="-1.66688885099333E-11"
+        izz="5.52663513444598E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_down_leg_haste_r_l_bottom_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0402139925361213 -0.0217979096556036 0.150508240086821"
+      rpy="-3.14159265358974 -0.37809580023011 -1.57079632679489" />
+    <parent
+      link="r_l_down_leg_haste" />
+    <child
+      link="r_l_bottom_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_l_front_up_leg_bar">
+    <inertial>
+      <origin
+        xyz="-0.0282099564891992 -0.0112832504114663 0.166876772429536"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157369485574645"
+        ixy="1.70716041834673E-06"
+        ixz="2.1923119407202E-05"
+        iyy="0.000151977733318782"
+        iyz="-6.24122497519982E-06"
+        izz="3.40097467816648E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_front_up_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_front_up_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_leg_top_r_l_front_up_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0146822575953638 -0.0272348088115137 0.0506616718426334"
+      rpy="-0.00179240769788526 0.37665648545583 -0.00940461218314768" />
+    <parent
+      link="r_leg_top" />
+    <child
+      link="r_l_front_up_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135591212" />
+  </joint>
+  <link
+    name="r_l_up_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="2.58126853225349E-15 0.0158239002708634 -0.0106334709811401"
+        rpy="0 0 0" />
+      <mass
+        value="0.0374531817283405" />
+      <inertia
+        ixx="7.83313520903203E-06"
+        ixy="3.87782271164859E-21"
+        ixz="-7.94093388050907E-21"
+        iyy="1.26168521569069E-05"
+        iyz="-1.93229391092387E-21"
+        izz="1.09040183718146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_up_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="0.176732894285212 -0.173309679331595 -0.206890843345123"
+      rpy="-0.0250313628193048 0.124689013359661 -1.54860935488955" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_l_up_up_actuator_lig" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="r_l_up_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.11949124970145E-09 2.72253997124494E-10 -0.051935907779936"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794389661985" />
+      <inertia
+        ixx="0.000366532786991817"
+        ixy="1.15369442328612E-11"
+        ixz="-1.2638080319792E-11"
+        iyy="0.000366379152502742"
+        iyz="-2.85657120753765E-12"
+        izz="1.48560975951467E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_up_leg_haste_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.015824 -0.025"
+      rpy="-0.4692 0 0" />
+    <parent
+      link="r_l_up_up_actuator_lig" />
+    <child
+      link="r_l_up_leg_haste" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="r_l_up_leg_atuador">
+    <inertial>
+      <origin
+        xyz="0.0356691569675669 0.0693117698732961 -0.0199148953475014"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667402106655" />
+      <inertia
+        ixx="0.000769199632971667"
+        ixy="0.000110911530185416"
+        ixz="1.0102479452055E-06"
+        iyy="0.000144242285719652"
+        iyz="-1.4125831140037E-06"
+        izz="0.000845630693921881" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_leg_atuador.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_leg_atuador.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_l_up_leg_atuador_joint"
+    type="prismatic">
+    <origin
+      xyz="0.019586 -0.01828 -0.26982"
+      rpy="1.5708 0 1.5583" />
+    <parent
+      link="r_l_up_leg_haste" />
+    <child
+      link="r_l_up_leg_atuador" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_l_up_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="9.4091401336982E-15 0.00280195446034331 0.0174205238595978"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.82751781586971E-06"
+        ixy="-3.49401090742399E-21"
+        ixz="-4.52633231189017E-21"
+        iyy="1.3705115727033E-05"
+        iyz="2.02832723749375E-07"
+        izz="1.48499274386226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/r_l_up_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_r_up_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0.0310925148294538 -0.0186375353386516 -0.0197220000000068"
+      rpy="2.89563081079793 1.5707963267949 0" />
+    <parent
+      link="r_l_up_leg_atuador" />
+    <child
+      link="r_l_up_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_r_up_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="2.94209101525666E-15 0.0159159814489382 -0.0106334709811395"
+        rpy="0 0 0" />
+      <mass
+        value="0.0374531817283405" />
+      <inertia
+        ixx="7.83313520903204E-06"
+        ixy="-8.64238303995403E-21"
+        ixz="-3.86458782184775E-21"
+        iyy="1.26168521569069E-05"
+        iyz="-2.82564897248114E-21"
+        izz="1.09040183718146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_up_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="0.177051067949719 -0.270316082231356 -0.208632499345853"
+      rpy="-0.0248575120785621 -0.0406342951323011 -1.5444856627225" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_r_up_up_actuator_lig" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="l_r_up_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.15980258730275E-09 2.85186929627201E-10 -0.0519359077579953"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794390056665" />
+      <inertia
+        ixx="0.000366532787065977"
+        ixy="1.15368473475916E-11"
+        ixz="-1.30197747634652E-11"
+        iyy="0.000366379152596544"
+        iyz="-2.99844234997997E-12"
+        izz="1.48560976019594E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_up_leg_haste_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0159159814489382 -0.0249999999999964"
+      rpy="-0.515941786661716 0 0" />
+    <parent
+      link="l_r_up_up_actuator_lig" />
+    <child
+      link="l_r_up_leg_haste" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="l_r_up_leg_atuador">
+    <inertial>
+      <origin
+        xyz="0.0356691570178864 0.0693117699241423 -0.019914895483196"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667401042769" />
+      <inertia
+        ixx="0.000769199632750308"
+        ixy="0.000110911530182476"
+        ixz="1.01024852149154E-06"
+        iyy="0.000144242286202191"
+        iyz="-1.41258330279127E-06"
+        izz="0.000845630694028051" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_leg_atuador.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_leg_atuador.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_up_leg_atuador_joint"
+    type="prismatic">
+    <origin
+      xyz="0.020109 -0.017702 -0.27289"
+      rpy="1.5708 0 1.5874" />
+    <parent
+      link="l_r_up_leg_haste" />
+    <child
+      link="l_r_up_leg_atuador" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_r_up_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-1.62647673107585E-14 0.00280195446028458 0.0174205238595491"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.8275178158697E-06"
+        ixy="-8.5232690317464E-21"
+        ixz="1.90582413132218E-21"
+        iyy="1.3705115727033E-05"
+        iyz="2.02832723749373E-07"
+        izz="1.48499274386226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_up_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_up_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0.0309326457985631 -0.0188485248454831 -0.0196480000000081"
+      rpy="2.91425644849924 1.5707963267949 0" />
+    <parent
+      link="l_r_up_leg_atuador" />
+    <child
+      link="l_r_up_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_leg_top">
+    <inertial>
+      <origin
+        xyz="-0.0685946080728938 0.000723220402845615 0.0303968831709908"
+        rpy="0 0 0" />
+      <mass
+        value="0.138773510121939" />
+      <inertia
+        ixx="3.21824560993039E-05"
+        ixy="-5.01670826679134E-08"
+        ixz="-2.10996777089989E-06"
+        iyy="0.000155451875344467"
+        iyz="2.62535057253198E-07"
+        izz="0.000166475604242204" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_top.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_top.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_leg_top_joint"
+    type="continuous">
+    <origin
+      xyz="0.0579324033075853 -0.332496570076038 -0.198225676457735"
+      rpy="-3.13401519737026 -0.0248369889900294 -3.11629198675053" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_leg_top" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="l_r_front_up_leg_bar">
+    <inertial>
+      <origin
+        xyz="-0.0282099564892677 0.0319894071413155 0.165847911720022"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157366743902208"
+        ixy="-6.61700621015375E-07"
+        ixz="2.19794419948881E-05"
+        iyy="0.00015230331750022"
+        iyz="6.01713534873881E-07"
+        izz="3.36814209277913E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_front_up_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_front_up_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_front_up_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0147907980872848 0.0168343365597003 0.0496138736547796"
+      rpy="-0.00252929863998116 0.442107770600965 -0.0112549071722679" />
+    <parent
+      link="l_leg_top" />
+    <child
+      link="l_r_front_up_leg_bar" />
+    <axis
+      xyz="0 0.999717465199626 -0.023769513559093" />
+  </joint>
+  <link
+    name="l_back_up_leg_bar">
+    <inertial>
+      <origin
+        xyz="-0.111288228412038 0.0129421939406365 -0.11410700494324"
+        rpy="0 0 0" />
+      <mass
+        value="0.106045030353999" />
+      <inertia
+        ixx="0.000145683712603248"
+        ixy="4.43475391208612E-07"
+        ixz="1.86710859461769E-05"
+        iyy="0.000134791655009793"
+        iyz="-2.54785094666476E-06"
+        izz="2.76955943465264E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_back_up_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_back_up_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_back_up_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0147907980872848 0.0168343365597003 0.0496138736547796"
+      rpy="3.14137187381274 0.135752874403086 -0.00324767223227192" />
+    <parent
+      link="l_leg_top" />
+    <child
+      link="l_back_up_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135590915" />
+  </joint>
+  <link
+    name="l_leg_middle">
+    <inertial>
+      <origin
+        xyz="0.0546093881097997 0.0218726037435046 0.371824956238988"
+        rpy="0 0 0" />
+      <mass
+        value="0.139537136112528" />
+      <inertia
+        ixx="6.01628787400078E-05"
+        ixy="-5.4936036487442E-12"
+        ixz="-2.3106013453691E-10"
+        iyy="7.59522090839829E-05"
+        iyz="-4.82734547967609E-07"
+        izz="5.56485074534702E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_leg_middle_joint"
+    type="fixed">
+    <origin
+      xyz="-0.121172873837905 -0.0124887540215028 -0.635580041350891"
+      rpy="-0.000220779777000686 0.13575287440317 -0.0032476722322721" />
+    <parent
+      link="l_back_up_leg_bar" />
+    <child
+      link="l_leg_middle" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_r_front_down_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.0122359795255349 -0.0266496994477687 -0.0947271449474286"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157369485574645"
+        ixy="1.70716041834667E-06"
+        ixz="2.19231194072018E-05"
+        iyy="0.000151977733318783"
+        iyz="-6.24122497519958E-06"
+        izz="3.40097467816647E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_front_down_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_front_down_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_front_down_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="0.109527743199547 0.00211501628159666 0.352289358733316"
+      rpy="-0.00121041590355034 0.312531821384788 -0.00768268438850021" />
+    <parent
+      link="l_leg_middle" />
+    <child
+      link="l_r_front_down_leg_bar" />
+    <axis
+      xyz="0 0.999717465199626 -0.0237695135590862" />
+  </joint>
+  <link
+    name="l_r_bottom_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-2.94209101525666E-15 -0.00469804553963094 -0.0220778938236938"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203693" />
+      <inertia
+        ixx="9.82751781586972E-06"
+        ixy="-9.92616735063633E-21"
+        ixz="-2.23669637634339E-21"
+        iyy="1.3705115727033E-05"
+        iyz="2.02832723749369E-07"
+        izz="1.48499274386226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_bottom_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_bottom_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_bottom_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="-0.015992 -0.024791 -0.023642"
+      rpy="1.4174 0.047667 1.5671" />
+    <parent
+      link="l_r_front_down_leg_bar" />
+    <child
+      link="l_r_bottom_up_actuator_lig" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_r_down_leg_actuator">
+    <inertial>
+      <origin
+        xyz="0.0356691568029014 0.0693117699809659 -0.0199148954932625"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667408744588" />
+      <inertia
+        ixx="0.000769199640713738"
+        ixy="0.00011091153164738"
+        ixz="1.01024833813395E-06"
+        iyy="0.000144242287605143"
+        iyz="-1.4125833948772E-06"
+        izz="0.000845630700458234" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_down_leg_actuator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_down_leg_actuator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_down_leg_actuator_joint"
+    type="fixed">
+    <origin
+      xyz="-0.019722 -0.032837 -0.013612"
+      rpy="-1.5708 1.3433 1.5708" />
+    <parent
+      link="l_r_bottom_up_actuator_lig" />
+    <child
+      link="l_r_down_leg_actuator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_r_down_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.24833215986442E-09 2.23188550974029E-10 0.0600640921336087"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794388000689" />
+      <inertia
+        ixx="0.000366532786767026"
+        ixy="1.15214673573868E-11"
+        ixz="-1.40994128215224E-11"
+        iyy="0.000366379152214307"
+        iyz="-1.44661958489933E-12"
+        izz="1.48560975927205E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_down_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_down_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_down_leg_haste_joint"
+    type="prismatic">
+    <origin
+      xyz="0.018034 0.15188 -0.019812"
+      rpy="1.5708 1.5667 -3.1416" />
+    <parent
+      link="l_r_down_leg_actuator" />
+    <child
+      link="l_r_down_leg_haste" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_r_bottom_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-0.000390763821370738 1.88564044822925E-07 0.0185098696656129"
+        rpy="0 0 0" />
+      <mass
+        value="0.0774326489714529" />
+      <inertia
+        ixx="2.68471284490314E-05"
+        ixy="4.8370831109865E-10"
+        ixz="-2.17499988478331E-07"
+        iyy="5.54855431917228E-05"
+        iyz="-1.667836719846E-11"
+        izz="5.52663514931805E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_r_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_r_bottom_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.015844 0.1509"
+      rpy="-3.1416 -0.38681 -1.5708" />
+    <parent
+      link="l_r_down_leg_haste" />
+    <child
+      link="l_r_bottom_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_back_down_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.0175150560183042 0.00990241958635762 -0.131638395071284"
+        rpy="0 0 0" />
+      <mass
+        value="0.106045030353999" />
+      <inertia
+        ixx="0.000145683712603248"
+        ixy="4.43475391208629E-07"
+        ixz="1.86710859461767E-05"
+        iyy="0.000134791655009793"
+        iyz="-2.54785094666486E-06"
+        izz="2.76955943465263E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_back_down_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_back_down_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_back_down_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.020472256800297 0.00837257577686878 0.352140577552224"
+      rpy="-0.00121041590351512 0.312531821384556 -0.00768268438848585" />
+    <parent
+      link="l_leg_middle" />
+    <child
+      link="l_back_down_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135591169" />
+  </joint>
+  <link
+    name="l_leg_bottom">
+    <inertial>
+      <origin
+        xyz="0.0961698691730888 0.0157063139572843 0.0703968831914836"
+        rpy="0 0 0" />
+      <mass
+        value="0.138773509884686" />
+      <inertia
+        ixx="3.21824560894063E-05"
+        ixy="-5.01670812285014E-08"
+        ixz="-2.10996775501733E-06"
+        iyy="0.000155451875335329"
+        iyz="2.62535060514978E-07"
+        izz="0.00016647560422615" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_bottom.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_bottom.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_leg_bottom_joint"
+    type="fixed">
+    <origin
+      xyz="0.0492264488058068 -0.00941422294354771 -0.353880321406516"
+      rpy="-0.00121041590351369 -0.312531821384656 0.00768268438848852" />
+    <parent
+      link="l_back_down_leg_bar" />
+    <child
+      link="l_leg_bottom" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_leg_foot">
+    <inertial>
+      <origin
+        xyz="0.0893449763087005 -0.00059528220939381 -0.024299023103547"
+        rpy="0 0 0" />
+      <mass
+        value="0.530146784871497" />
+      <inertia
+        ixx="0.000353885949981624"
+        ixy="2.08915907807299E-07"
+        ixz="6.14942054692081E-06"
+        iyy="0.000330077198023129"
+        iyz="-4.08135725443252E-07"
+        izz="0.00058243652409326" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_leg_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_leg_foot_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0149830935219956 0.0399999999999752"
+      rpy="0.000239229069610461 0 0" />
+    <parent
+      link="l_leg_bottom" />
+    <child
+      link="l_leg_foot" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="l_l_front_down_leg_bar">
+    <inertial>
+      <origin
+        xyz="0.0122359795251197 0.0107062302162699 -0.0956153281668813"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157366743902207"
+        ixy="-6.61700621015431E-07"
+        ixz="2.19794419948883E-05"
+        iyy="0.000152303317500218"
+        iyz="6.01713534874306E-07"
+        izz="3.36814209277914E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_front_down_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_front_down_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_front_down_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="0.109527743199547 0.0521008895415778 0.35110088305536"
+      rpy="-0.0012104159035145 0.312531821384023 -0.00768268438846909" />
+    <parent
+      link="l_leg_middle" />
+    <child
+      link="l_l_front_down_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135591125" />
+  </joint>
+  <link
+    name="l_l_bottom_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-3.66373598126302E-15 -0.00469804553964959 -0.0218790168360958"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.82751781586971E-06"
+        ixy="1.68744844960818E-21"
+        ixz="-3.63959469523332E-21"
+        iyy="1.3705115727033E-05"
+        iyz="2.02832723749372E-07"
+        izz="1.48499274386226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_bottom_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_bottom_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_bottom_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0161881858548926 0.0111984792741298 -0.0245280240005782"
+      rpy="1.41761491403945 0.000331690319734072 1.574415958046" />
+    <parent
+      link="l_l_front_down_leg_bar" />
+    <child
+      link="l_l_bottom_up_actuator_lig" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_l_down_leg_actuator">
+    <inertial>
+      <origin
+        xyz="0.0356691568218756 0.0693117700159467 -0.0199148955365731"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667408366248" />
+      <inertia
+        ixx="0.000769199640754211"
+        ixy="0.000110911531640826"
+        ixz="1.01024857867983E-06"
+        iyy="0.000144242287768402"
+        iyz="-1.4125835042707E-06"
+        izz="0.000845630700641768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_down_leg_actuator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_down_leg_actuator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_down_leg_actuator_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0196480000000255 -0.0328943612344292 -0.0134612750590342"
+      rpy="-1.57079632679493 1.33995490898813 1.57079632679483" />
+    <parent
+      link="l_l_bottom_up_actuator_lig" />
+    <child
+      link="l_l_down_leg_actuator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_l_down_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.17165077639925E-09 1.95829547022797E-10 0.0600640921341424"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794388014517" />
+      <inertia
+        ixx="0.000366532786769028"
+        ixy="1.15227230485792E-11"
+        ixz="-1.33787941129893E-11"
+        iyy="0.000366379152208479"
+        iyz="-1.111348911579E-12"
+        izz="1.48560975837615E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_down_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_down_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_down_leg_haste_joint"
+    type="prismatic">
+    <origin
+      xyz="0.018034 0.14962 -0.019812"
+      rpy="-1.5708 1.5667 0" />
+    <parent
+      link="l_l_down_leg_actuator" />
+    <child
+      link="l_l_down_leg_haste" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_l_bottom_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-0.00039076352930778 1.89228224867222E-07 0.018509870693995"
+        rpy="0 0 0" />
+      <mass
+        value="0.0774326478523155" />
+      <inertia
+        ixx="2.68471318593865E-05"
+        ixy="4.83185338948944E-10"
+        ixz="-2.17499534388413E-07"
+        iyy="5.54855343232734E-05"
+        iyz="-1.57462761764127E-11"
+        izz="5.5266339179544E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_bottom_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_bottom_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.0159753922623912 0.150843105463606"
+      rpy="3.14159265358979 -0.390192531755065 -1.5707963267949" />
+    <parent
+      link="l_l_down_leg_haste" />
+    <child
+      link="l_l_bottom_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_l_front_up_leg_bar">
+    <inertial>
+      <origin
+        xyz="-0.0282099564891466 -0.0240606740191889 0.167180571407012"
+        rpy="0 0 0" />
+      <mass
+        value="0.11945134239954" />
+      <inertia
+        ixx="0.000157369485574645"
+        ixy="1.70716041834674E-06"
+        ixz="2.1923119407202E-05"
+        iyy="0.000151977733318783"
+        iyz="-6.24122497519986E-06"
+        izz="3.40097467816648E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_front_up_leg_bar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_front_up_leg_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_front_up_leg_bar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0147907980872848 -0.0144573852037927 0.0503578728651507"
+      rpy="-0.00252929863997792 0.442107770600729 -0.0112549071722617" />
+    <parent
+      link="l_leg_top" />
+    <child
+      link="l_l_front_up_leg_bar" />
+    <axis
+      xyz="0 0.999717465199625 -0.0237695135590956" />
+  </joint>
+  <link
+    name="l_l_up_up_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-1.39332989590457E-14 -0.0158845962444857 -0.0106334709811114"
+        rpy="0 0 0" />
+      <mass
+        value="0.0374531817283405" />
+      <inertia
+        ixx="7.83313520903204E-06"
+        ixy="-6.96155203524628E-21"
+        ixz="-6.24686798600047E-21"
+        iyy="1.26168521569069E-05"
+        iyz="1.32183461885974E-21"
+        izz="1.09040183718146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_up_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_up_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_up_up_actuator_lig_joint"
+    type="continuous">
+    <origin
+      xyz="0.177064450799566 -0.390333625572824 -0.21077767649068"
+      rpy="0.0248960275658376 -0.0688745919910604 1.59438329285297" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_l_up_up_actuator_lig" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="l_l_up_leg_haste">
+    <inertial>
+      <origin
+        xyz="1.13601023032928E-09 2.76828671097462E-10 -0.0519359077622249"
+        rpy="0 0 0" />
+      <mass
+        value="0.295794389986021" />
+      <inertia
+        ixx="0.000366532787052734"
+        ixy="1.15370085853423E-11"
+        ixz="-1.2796211583261E-11"
+        iyy="0.000366379152577902"
+        iyz="-2.90055727181159E-12"
+        izz="1.48560975989761E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_leg_haste.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_leg_haste.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_up_leg_haste_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0158845962444857 -0.0249999999999682"
+      rpy="-0.50718332513988 0 -3.14159265358979" />
+    <parent
+      link="l_l_up_up_actuator_lig" />
+    <child
+      link="l_l_up_leg_haste" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="l_l_up_leg_atuador">
+    <inertial>
+      <origin
+        xyz="0.0356691569894283 0.0693117698754249 -0.0199148953159229"
+        rpy="0 0 0" />
+      <mass
+        value="0.343667400999636" />
+      <inertia
+        ixx="0.000769199631784211"
+        ixy="0.000110911529916116"
+        ixz="1.01024783750481E-06"
+        iyy="0.000144242285366937"
+        iyz="-1.41258298599764E-06"
+        izz="0.000845630692921785" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_leg_atuador.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_leg_atuador.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_up_leg_atuador_joint"
+    type="prismatic">
+    <origin
+      xyz="0.019532 -0.018337 -0.27124"
+      rpy="1.5708 0 1.5554" />
+    <parent
+      link="l_l_up_leg_haste" />
+    <child
+      link="l_l_up_leg_atuador" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.2"
+      upper="0.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_l_up_bottom_actuator_lig">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-15 0.00280195446036979 0.017420523859659"
+        rpy="0 0 0" />
+      <mass
+        value="0.0460708867203692" />
+      <inertia
+        ixx="9.8275178158697E-06"
+        ixy="-8.470329472543E-22"
+        ixz="5.29395592033938E-22"
+        iyy="1.3705115727033E-05"
+        iyz="2.02832723749364E-07"
+        izz="1.48499274386226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_bottom_actuator_lig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://alice_description/meshes/l_l_up_bottom_actuator_lig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_l_up_bottom_actuator_lig_joint"
+    type="fixed">
+    <origin
+      xyz="0.0308556196868716 -0.0189473349665785 -0.0221220000000291"
+      rpy="-1.04104620894622 1.57079630098533 2.3190651342933" />
+    <parent
+      link="l_l_up_leg_atuador" />
+    <child
+      link="l_l_up_bottom_actuator_lig" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

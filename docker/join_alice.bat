@@ -1,0 +1,3 @@
+@echo off
+echo Entrando no container Alice...
+docker exec -it alice bash

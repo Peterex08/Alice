@@ -7,6 +7,7 @@ RUN apt update && apt upgrade -y && \
     apt install -y \
     ros-humble-desktop-full \
     ros-humble-rqt* \
+    ros-humble-urdf-tutorial \
     python3-colcon-common-extensions \
     build-essential \
     git \
