@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- 1. Macro do Segmento Repetitivo -->
+  <xacro:macro name="up_actuator_segment" params="prefix parent *origin">
+    
+    <!-- Junta que conecta o segmento ao link pai 'prefix=l_l, l_r, r_l, r_r' -->
+    <joint name="${parent}_${prefix}_up_up_leg_conn_joint" type="revolute">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}_up_up_leg_conn" />
+      <axis xyz="1 0 0" />
+      <limit lower="-1.0" upper="1.0" effort="100" velocity="1.0"/>
+    </joint>
+
+    <link name="${prefix}_up_up_leg_conn">
+      <visual>
+        <geometry>
+          <!-- Reutilizando o mesmo STL -->
+          <mesh filename="package://alice_xacro_desc/meshes/up_haste_lig.stl" />
+        </geometry>
+      </visual>
+      <inertial>
+        <mass value="1.0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+      </inertial>
+    </link>
+
+    <link name="${prefix}_up_haste">
+      <visual>
+        <geometry>
+          <!-- Reutilizando o mesmo STL -->
+          <mesh filename="package://alice_xacro_desc/meshes/up_haste.stl" />
+        </geometry>
+      </visual>
+      <inertial>
+        <mass value="1.0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+      </inertial>
+    </link>
+
+    <joint
+      name="${prefix}_up_up_leg_conn_${prefix}_up_haste_joint"
+      type="continuous">
+      <origin
+        xyz="0 0 -0.025"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}_up_up_leg_conn" />
+      <child
+        link="${prefix}_up_haste" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <link name="${prefix}_up_atuador">
+      <visual>
+        <geometry>
+          <!-- Reutilizando o mesmo STL -->
+          <mesh filename="package://alice_xacro_desc/meshes/up_actuator.stl" />
+        </geometry>
+      </visual>
+      <inertial>
+        <mass value="1.0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+      </inertial>
+    </link>
+
+    <joint
+      name="${prefix}_up_haste_${prefix}_up_atuador_joint"
+      type="prismatic">
+      <origin
+        xyz="0 0 -0.075"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}_up_haste" />
+      <child
+        link="${prefix}_up_atuador" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-0.2"
+        upper="0.2"
+        effort="100"
+        velocity="1" />
+    </joint>
+
+    <link name="${prefix}_up_dn_leg_conn">
+      <visual>
+        <geometry>
+          <!-- Reutilizando o mesmo STL -->
+          <mesh filename="package://alice_xacro_desc/meshes/up_actuator_lig.stl" />
+        </geometry>
+      </visual>
+      <inertial>
+        <mass value="1.0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+      </inertial>
+    </link>
+
+    <joint
+      name="${prefix}_up_atuador_${prefix}_up_dn_leg_conn_joint"
+      type="continuous">
+      <origin
+        xyz="-0.001651 0 -0.1700170"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}_up_atuador" />
+      <child
+        link="${prefix}_up_dn_leg_conn" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <!-- Aqui você continuaria declarando as juntas (ex: prismática para o atuador) e links (haste, conector final) usando sempre ${prefix}_nome_do_link -->
+
+  </xacro:macro>
+
+
+</robot>

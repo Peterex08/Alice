@@ -1,0 +1,216 @@
+Links e Juntas Alice
+
+base link
+
+    yaw_head_axis
+    base_link_yaw_head_joint
+    yaw_head
+        pitch_head_axis
+        yaw_head_pitch_head_joint
+        pitch_head
+
+    #Left arm
+
+	l_arm_tri_axis
+	base_link_l_arm_tri_joint
+	l_arm_tri
+		l_arm_haste_axis
+		l_arm_tri_l_arm_haste_joint
+		l_arm_haste
+			l_arm_atuador_axis (prismatic)
+			l_arm_haste_l_arm_atuador_joint
+			l_arm_atuador
+		
+		l_arm_ant_axis
+		l_arm_tri_l_arm_ant_joint
+		l_arm_ant
+
+    #Right arm
+
+	r_arm_tri_axis
+	base_link_r_arm_tri_joint
+	r_arm_tri
+		r_arm_haste_axis
+		r_arm_tri_r_arm_haste_joint
+		r_arm_haste
+			r_arm_atuador_axis (prismatic)
+			r_arm_haste_r_arm_atuador_joint
+			r_arm_atuador
+		
+		r_arm_ant_axis
+		r_arm_tri_r_arm_ant_joint
+		r_arm_ant
+
+    #Left leg
+
+    l_l_up_up_leg_conn_axis
+    base_link_l_l_up_up_leg_conn_joint
+    l_l_up_up_leg_conn
+        l_l_up_haste_axis
+        l_l_up_up_leg_conn_l_l_up_haste_joint
+        l_l_up_haste
+            l_l_up_atuador_axis (prismatic)
+            l_l_up_haste_l_l_up_atuador_joint
+            l_l_up_atuador
+                l_l_up_dn_leg_conn_axis
+                l_l_up_atuador_l_l_up_dn_leg_conn_joint
+                l_l_up_dn_leg_conn
+    
+    l_up_leg_conn_axis
+    base_link_l_up_leg_conn_joint
+    l_up_leg_conn
+        l_l_up_front_leg_axis
+        l_up_leg_conn_l_l_up_front_leg_joint
+        l_l_up_front_leg
+
+        l_up_back_leg_axis
+        l_up_leg_conn_l_up_back_leg_joint
+        l_up_back_leg
+            l_knee_axis
+            l_up_back_leg_l_knee_joint
+            l_knee
+                l_l_dn_front_leg_axis
+                l_knee_l_l_dn_front_leg_joint
+                l_l_dn_front_leg
+                    l_l_dn_up_leg_conn_axis
+                    l_l_dn_front_leg_l_l_dn_up_leg_conn_joint
+                    l_l_dn_up_leg_conn
+                        l_l_dn_atuador_axis 
+                        l_l_dn_up_leg_conn_l_l_dn_atuador_joint
+                        l_l_dn_atuador
+                            l_l_dn_haste_axis (prismatic)
+                            l_l_dn_atuador_l_l_dn_haste_joint
+                            l_l_dn_haste
+                                l_l_dn_dn_leg_conn_axis
+                                l_l_dn_haste_l_l_dn_dn_leg_conn_joint
+                                l_l_dn_dn_leg_conn
+
+                l_dn_back_leg_axis
+                l_knee_l_dn_back_leg_joint
+                l_dn_back_leg
+                    l_ankle_axis
+                    l_dn_back_leg_l_ankle_joint
+                    l_ankle
+                        l_foot_axis
+                        l_ankle_l_foot_joint
+                        l_foot
+
+                l_r_dn_front_leg_axis
+                l_knee_l_r_dn_front_leg_joint
+                l_r_dn_front_leg
+                    l_r_dn_up_leg_conn_axis
+                    l_r_dn_front_leg_l_r_dn_up_leg_conn_joint
+                    l_r_dn_up_leg_conn
+                        l_r_dn_atuador_axis 
+                        l_r_dn_up_leg_conn_l_r_dn_atuador_joint
+                        l_r_dn_atuador
+                            l_r_dn_haste_axis (prismatic)
+                            l_r_dn_atuador_l_r_dn_haste_joint
+                            l_r_dn_haste
+                                l_r_dn_dn_leg_conn_axis
+                                l_r_dn_haste_l_r_dn_dn_leg_conn_joint
+                                l_r_dn_dn_leg_conn
+
+        l_r_up_front_leg_axis
+        l_up_leg_conn_l_r_up_front_leg_joint
+        l_r_up_front_leg
+    
+    l_r_up_up_leg_conn_axis
+    base_link_l_r_up_up_leg_conn_joint
+    l_r_up_up_leg_conn
+        l_r_up_haste_axis
+        l_r_up_up_leg_conn_l_r_up_haste_joint
+        l_r_up_haste
+            l_r_up_atuador_axis (prismatic)
+            l_r_up_haste_l_r_up_atuador_joint
+            l_r_up_atuador
+                l_r_up_dn_leg_conn_axis
+                l_r_up_atuador_l_r_up_dn_leg_conn_joint
+                l_r_up_dn_leg_conn
+
+    #Right leg
+
+    r_l_up_up_leg_conn_axis
+    base_link_r_l_up_up_leg_conn_joint
+    r_l_up_up_leg_conn
+        r_l_up_haste_axis
+        r_l_up_up_leg_conn_r_l_up_haste_joint
+        r_l_up_haste
+            r_l_up_atuador_axis (prismatic)
+            r_l_up_haste_r_l_up_atuador_joint
+            r_l_up_atuador
+                r_l_up_dn_leg_conn_axis
+                r_l_up_atuador_r_l_up_dn_leg_conn_joint
+                r_l_up_dn_leg_conn
+    
+    r_up_leg_conn_axis
+    base_link_r_up_leg_conn_joint
+    r_up_leg_conn
+        r_l_up_front_leg_axis
+        r_up_leg_conn_r_l_up_front_leg_joint
+        r_l_up_front_leg
+
+        r_up_back_leg_axis
+        r_up_leg_conn_r_up_back_leg_joint
+        r_up_back_leg
+            r_knee_axis
+            r_up_back_leg_r_knee_joint
+            r_knee
+                r_l_dn_front_leg_axis
+                r_knee_r_l_dn_front_leg_joint
+                r_l_dn_front_leg
+                    r_l_dn_up_leg_conn_axis
+                    r_l_dn_front_leg_r_l_dn_up_leg_conn_joint
+                    r_l_dn_up_leg_conn
+                        r_l_dn_atuador_axis 
+                        r_l_dn_up_leg_conn_r_l_dn_atuador_joint
+                        r_l_dn_atuador
+                            r_l_dn_haste_axis (prismatic)
+                            r_l_dn_atuador_r_l_dn_haste_joint
+                            r_l_dn_haste
+                                r_l_dn_dn_leg_conn_axis
+                                r_l_dn_haste_r_l_dn_dn_leg_conn_joint
+                                r_l_dn_dn_leg_conn
+
+                r_dn_back_leg_axis
+                r_knee_r_dn_back_leg_joint
+                r_dn_back_leg
+                    r_ankle_axis
+                    r_dn_back_leg_r_ankle_joint
+                    r_ankle
+                        r_foot_axis
+                        r_ankle_r_foot_joint
+                        r_foot
+
+                r_r_dn_front_leg_axis
+                r_knee_r_r_dn_front_leg_joint
+                r_r_dn_front_leg
+                    r_r_dn_up_leg_conn_axis
+                    r_r_dn_front_leg_r_r_dn_up_leg_conn_joint
+                    r_r_dn_up_leg_conn
+                        r_r_dn_atuador_axis 
+                        r_r_dn_up_leg_conn_r_r_dn_atuador_joint
+                        r_r_dn_atuador
+                            r_r_dn_haste_axis (prismatic)
+                            r_r_dn_atuador_r_r_dn_haste_joint
+                            r_r_dn_haste
+                                r_r_dn_dn_leg_conn_axis
+                                r_r_dn_haste_r_r_dn_dn_leg_conn_joint
+                                r_r_dn_dn_leg_conn
+
+        r_r_up_front_leg_axis
+        r_up_leg_conn_r_r_up_front_leg_joint
+        r_r_up_front_leg
+    
+    r_r_up_up_leg_conn_axis
+    base_link_r_r_up_up_leg_conn_joint
+    r_r_up_up_leg_conn
+        r_r_up_haste_axis
+        r_r_up_up_leg_conn_r_r_up_haste_joint
+        r_r_up_haste
+            r_r_up_atuador_axis (prismatic)
+            r_r_up_haste_r_r_up_atuador_joint
+            r_r_up_atuador
+                r_r_up_dn_leg_conn_axis
+                r_r_up_atuador_r_r_up_dn_leg_conn_joint
+                r_r_up_dn_leg_conn

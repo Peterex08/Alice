@@ -766,7 +766,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -780,7 +780,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -790,16 +790,16 @@
   </link>
   <joint
     name="r_r_up_leg_atuador_r_r_up_bottom_actuator_lig_joint"
-    type="fixed">
+    type="continuous">
     <origin
-      xyz="0.031177 -0.018522 -0.019648"
+      xyz="0.01969 -0.01016 -0.019648"
       rpy="2.8454 1.5708 -0.040242" />
     <parent
       link="r_r_up_leg_atuador" />
     <child
       link="r_r_up_bottom_actuator_lig" />
     <axis
-      xyz="0 0 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="r_leg_top">
@@ -978,7 +978,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0.02047226 -0.02234776 -0.39212928"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -1002,16 +1002,16 @@
   </link>
   <joint
     name="r_back_up_leg_bar_r_leg_middle_joint"
-    type="fixed">
+    type="continuous">
     <origin
-      xyz="0.033308707160086 -0.0285840269311472 -0.654109777039992"
+      xyz="0.04044594 0.00622512 -0.26182126"
       rpy="-5.88705488029949E-05 0.0702982984060446 -0.0016741881463759" />
     <parent
       link="r_back_up_leg_bar" />
     <child
       link="r_leg_middle" />
     <axis
-      xyz="0 0 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="r_r_front_down_leg_bar">
@@ -1947,7 +1947,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -1961,7 +1961,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -1970,17 +1970,17 @@
     </collision>
   </link>
   <joint
-    name="r_r_up_bottom_actuator_lig_joint"
-    type="fixed">
+    name="r_l_up_bottom_actuator_lig_joint"
+    type="continuous">
     <origin
-      xyz="0.0310925148294538 -0.0186375353386516 -0.0197220000000068"
+      xyz="0.01969 -0.01016 -0.01972"
       rpy="2.89563081079793 1.5707963267949 0" />
     <parent
       link="r_l_up_leg_atuador" />
     <child
       link="r_l_up_bottom_actuator_lig" />
     <axis
-      xyz="0 0 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="l_r_up_up_actuator_lig">
@@ -2164,7 +2164,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -2178,7 +2178,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -2188,16 +2188,16 @@
   </link>
   <joint
     name="l_r_up_bottom_actuator_lig_joint"
-    type="fixed">
+    type="continuous">
     <origin
-      xyz="0.0309326457985631 -0.0188485248454831 -0.0196480000000081"
+      xyz="0.01969 -0.01016 -0.0196480000000081"
       rpy="2.91425644849924 1.5707963267949 0" />
     <parent
       link="l_r_up_leg_atuador" />
     <child
       link="l_r_up_bottom_actuator_lig" />
     <axis
-      xyz="0 0 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="l_leg_top">
@@ -2309,7 +2309,7 @@
     name="l_back_up_leg_bar">
     <inertial>
       <origin
-        xyz="-0.111288228412038 0.0129421939406365 -0.11410700494324"
+        xyz="0.02 0.0129421939406365 -0.129788700494324"
         rpy="0 0 0" />
       <mass
         value="0.106045030353999" />
@@ -2323,7 +2323,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0.1288032 0 -0.01722172"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -2337,7 +2337,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0.1288032 0 -0.01722172"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -2349,20 +2349,20 @@
     name="l_back_up_leg_bar_joint"
     type="continuous">
     <origin
-      xyz="-0.0147907980872848 0.0168343365597003 0.0496138736547796"
+      xyz="-0.1447908 0.0168343365597003 0.04998587"
       rpy="3.14137187381274 0.135752874403086 -0.00324767223227192" />
     <parent
       link="l_leg_top" />
     <child
       link="l_back_up_leg_bar" />
     <axis
-      xyz="0 0.999717465199625 -0.0237695135590915" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="l_leg_middle">
     <inertial>
       <origin
-        xyz="0.0546093881097997 0.0218726037435046 0.371824956238988"
+        xyz="0.18046093881097997 0.0218726037435046 0.371824956238988"
         rpy="0 0 0" />
       <mass
         value="0.139537136112528" />
@@ -2376,7 +2376,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0.130 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -3345,7 +3345,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0 0.011 -0.009"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -3369,15 +3369,15 @@
   </link>
   <joint
     name="l_l_up_bottom_actuator_lig_joint"
-    type="fixed">
+    type="continuous">
     <origin
-      xyz="0.0308556196868716 -0.0189473349665785 -0.0221220000000291"
+      xyz="0.01969 -0.01016 -0.0221220000000291"
       rpy="-1.04104620894622 1.57079630098533 2.3190651342933" />
     <parent
       link="l_l_up_leg_atuador" />
     <child
       link="l_l_up_bottom_actuator_lig" />
     <axis
-      xyz="0 0 0" />
+      xyz="1 0 0" />
   </joint>
 </robot>

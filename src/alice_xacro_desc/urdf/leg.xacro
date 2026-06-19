@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- 1. Macro do Segmento Repetitivo -->
+  <xacro:macro name="actuator_segment" params="prefix parent *origin">
+    
+    <!-- Junta que conecta o segmento ao link pai -->
+    <joint name="${prefix}_base_joint" type="revolute">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}_base_connector_link" />
+      <axis xyz="0 1 0" />
+      <limit lower="-1.0" upper="1.0" effort="100" velocity="1.0"/>
+    </joint>
+
+    <link name="${prefix}_base_connector_link">
+      <visual>
+        <geometry>
+          <!-- Reutilizando o mesmo STL -->
+          <mesh filename="package://alice_xacro_desc/meshes/connector.stl" />
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Aqui você continuaria declarando as juntas (ex: prismática para o atuador) e links (haste, conector final) usando sempre ${prefix}_nome_do_link -->
+
+  </xacro:macro>
+
+  <!-- 2. Macro da Perna Completa -->
+  <xacro:macro name="biped_leg" params="prefix parent *origin">
+    
+    <joint name="${prefix}_hip_joint" type="revolute">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}_thigh_link" />
+      <!-- ... eixos e limites ... -->
+    </joint>
+
+    <link name="${prefix}_thigh_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://meu_robo_description/meshes/thigh.stl" />
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Instanciando os 4 segmentos na mesma perna -->
+    <xacro:actuator_segment prefix="${prefix}_actuator_1" parent="${prefix}_thigh_link">
+      <origin xyz="0.05 0.05 -0.1" rpy="0 0 0" />
+    </xacro:actuator_segment>
+
+    <xacro:actuator_segment prefix="${prefix}_actuator_2" parent="${prefix}_thigh_link">
+      <origin xyz="-0.05 0.05 -0.1" rpy="0 0 0" />
+    </xacro:actuator_segment>
+
+    <!-- Adicione os atuadores 3 e 4 com suas respectivas origens -->
+
+  </xacro:macro>
+</robot>
