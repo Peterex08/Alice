@@ -21,9 +21,15 @@
         </geometry>
       </visual>
       <inertial>
-        <mass value="1.0" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        <origin xyz="0.0 0.0 -0.01063" rpy="0 0 0"/>
+        <mass value="0.03745"/>
+        <inertia
+            ixx="0.000012617"
+            ixy="0.0"
+            ixz="0.0"
+            iyy="0.000007833"
+            iyz="0.0"
+            izz="0.000010904"/>
       </inertial>
     </link>
 
@@ -33,11 +39,17 @@
           <!-- Reutilizando o mesmo STL -->
           <mesh filename="package://alice_xacro_desc/meshes/up_haste.stl" />
         </geometry>
-      </visual>
+      </visual>      
       <inertial>
-        <mass value="1.0" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        <origin xyz="0.0 0.0 -0.05194" rpy="0 0 0"/>
+        <mass value="0.29579"/>
+        <inertia
+            ixx="0.000366379"
+            ixy="0.00000000001"
+            ixz="0.0"
+            iyy="0.000366533"
+            iyz="0.00000000001"
+            izz="0.000014856"/>
       </inertial>
     </link>
 
@@ -63,9 +75,15 @@
         </geometry>
       </visual>
       <inertial>
-        <mass value="1.0" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        <origin xyz="0.0 0.0 -0.05194" rpy="0 0 0"/>
+        <mass value="0.29579"/>
+        <inertia
+            ixx="0.000366379"
+            ixy="0.00000000001"
+            ixz="0.0"
+            iyy="0.000366533"
+            iyz="0.00000000001"
+            izz="0.000014856"/>
       </inertial>
     </link>
 
@@ -96,9 +114,15 @@
         </geometry>
       </visual>
       <inertial>
-        <mass value="1.0" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        <origin xyz="0.00842 0.0 -0.01380" rpy="0 0 0"/>
+        <mass value="0.04607"/>
+        <inertia
+            ixx="0.000014850"
+            ixy="0.0"
+            ixz="0.000000203"
+            iyy="0.000009828"
+            iyz="0.0"
+            izz="0.000013705"/>
       </inertial>
     </link>
 

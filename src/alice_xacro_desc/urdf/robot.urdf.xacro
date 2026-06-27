@@ -28,9 +28,15 @@
       </geometry>
     </visual>
     <inertial>
-      <mass value="1.0" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+      <origin xyz="0.01993 0.01512 0.01352" rpy="0 0 0"/>
+      <mass value="9.15148"/>
+      <inertia
+          ixx="0.380681653"
+          ixy="-0.003081798"
+          ixz="0.045436723"
+          iyy="0.247471053"
+          iyz="0.013902336"
+          izz="0.266646562"/>
     </inertial>
   </link>
 

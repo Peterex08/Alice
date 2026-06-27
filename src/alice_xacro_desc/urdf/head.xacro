@@ -20,9 +20,15 @@
         </geometry>
       </visual>
       <inertial>
-        <mass value="1.0" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        <origin xyz="0.0 -0.00358 0.03195" rpy="0 0 0"/>
+        <mass value="0.05815"/>
+        <inertia
+            ixx="0.000023285"
+            ixy="0.000000000"
+            ixz="-0.000000074"
+            iyy="0.000015710"
+            iyz="-0.000001654"
+            izz="0.000012426"/>
       </inertial>
     </link>
 
@@ -34,9 +40,15 @@
         </geometry>
       </visual>
       <inertial>
-        <mass value="1.0" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        <origin xyz="-0.00377 0.02101 0.03408" rpy="0 0 0"/>
+        <mass value="0.02883"/>
+        <inertia
+            ixx="0.000024978"
+            ixy="0.000000460"
+            ixz="-0.000000341"
+            iyy="0.000008037"
+            iyz="0.000001562"
+            izz="0.000020981"/>
       </inertial>
     </link>
 
