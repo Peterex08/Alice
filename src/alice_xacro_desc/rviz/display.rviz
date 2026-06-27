@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Status1
       Splitter Ratio: 0.5
     Tree Height: 555
   - Class: rviz_common/Selection
@@ -76,12 +75,312 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        l_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_arm_ant:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_arm_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_arm_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_arm_tri:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_dn_back_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_foot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_knee:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_dn_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_dn_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_dn_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_dn_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_up_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_up_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_l_up_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         l_l_up_haste:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         l_l_up_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_dn_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_dn_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_dn_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_dn_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_up_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_up_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_up_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_up_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_r_up_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_up_back_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pitch_head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_arm_ant:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_arm_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_arm_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_arm_tri:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_dn_back_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_foot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_knee:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_dn_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_dn_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_dn_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_dn_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_up_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_up_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_up_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_up_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_l_up_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_dn_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_dn_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_dn_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_dn_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_up_atuador:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_up_dn_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_up_front_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_up_haste:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_r_up_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_up_back_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_up_leg_conn:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        yaw_head:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -97,7 +396,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_footprint
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -140,7 +439,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.8673083782196045
+      Distance: 1.469738483428955
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -155,10 +454,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.28539764881134033
-      Target Frame: base_footprint
+      Pitch: 0.545397937297821
+      Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.2103983759880066
+      Yaw: 2.285398483276367
     Saved: ~
 Window Geometry:
   Displays:
@@ -176,5 +475,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 107
-  Y: 63
+  X: 267
+  Y: 97

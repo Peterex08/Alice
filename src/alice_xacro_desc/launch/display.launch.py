@@ -8,6 +8,7 @@ from launch_ros.parameter_descriptions import ParameterValue # <--- Import adici
 def generate_launch_description():
     pkg_path = get_package_share_directory('alice_xacro_desc')
     xacro_file = os.path.join(pkg_path, 'urdf', 'robot.urdf.xacro')
+    rviz_config = os.path.join(pkg_path, 'rviz', 'display.rviz')
 
     # Converte o Xacro usando um Command do Launch
     robot_description_content = Command(['xacro ', xacro_file])
@@ -33,7 +34,8 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         name='rviz2',
-        output='screen'
+        output='screen',
+        arguments=['-d', rviz_config]
     )
 
     return LaunchDescription([

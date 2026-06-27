@@ -13,6 +13,10 @@
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/cmake/alice_xacro_descConfig.cmake
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/cmake/alice_xacro_descConfig-version.cmake
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/package.xml
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/arms.xacro
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/center_leg.xacro
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/dn_act_segment.xacro
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/head.xacro
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/leg.xacro
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/robot.urdf.xacro
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/urdf/up_act_segment.xacro
@@ -28,7 +32,13 @@
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/front_dn_r.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/front_up_l.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/front_up_r.STL
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/head1.STL
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/head2.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/knee.STL
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/larm1.STL
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/larm2.STL
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/rarm1.STL
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/rarm2.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/up_actuator.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/up_actuator_lig.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/up_femur.STL
@@ -36,4 +46,5 @@
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/meshes/up_haste_lig.STL
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/launch/display.launch.py
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/launch/gazebo.launch.py
+/home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/launch/__pycache__/display.launch.cpython-310.pyc
 /home/rosuser/Alice/src/install/alice_xacro_desc/share/alice_xacro_desc/rviz/display.rviz

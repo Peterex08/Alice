@@ -7,6 +7,9 @@
   <xacro:include filename="head.xacro" /> -->
 
   <xacro:include filename="up_act_segment.xacro" />
+  <xacro:include filename="center_leg.xacro" />
+  <xacro:include filename="arms.xacro" />
+  <xacro:include filename="head.xacro" />
 
   <link name="base_footprint"/>
 
@@ -31,15 +34,46 @@
     </inertial>
   </link>
 
+  <!-- Instanciando o Braço Esquerdo -->
+  <xacro:head parent="base_link">
+    <origin xyz="0.05513968 -0.00242679 0.246" rpy="0 0 0" />
+  </xacro:head>
+
+  <!-- Instanciando o Braço Esquerdo -->
+  <xacro:left_arm parent="base_link">
+    <origin xyz="0.03325 0.222 0.152" rpy="0 0 0" />
+  </xacro:left_arm>
+
+  <!-- Instanciando o Braço Direito -->
+  <xacro:right_arm parent="base_link">
+    <origin xyz="0.03325 -0.222 0.152" rpy="0 0 0" />
+  </xacro:right_arm>
+
   <!-- Instanciando a Perna Esquerda -->
   <xacro:up_actuator_segment prefix="l_l" parent="base_link">
-    <origin xyz="0 -0.15 -0.25" rpy="0 0 0" />
+    <origin xyz="-0.085 0.1685 -0.245" rpy="0 0 0" />
+  </xacro:up_actuator_segment>
+    
+  <xacro:center_leg prefix="l" parent="base_link">
+    <origin xyz="-0.032 0.1075 -0.2365" rpy="0 0 0" />
+  </xacro:center_leg>
+
+  <xacro:up_actuator_segment prefix="l_r" parent="base_link">
+    <origin xyz="-0.085 0.0485 -0.245" rpy="0 0 0" />
   </xacro:up_actuator_segment>
 
   <!-- Instanciando a Perna Esquerda -->
-  <!-- <xacro:up_actuator_segment prefix="left" parent="base_link">
-    <origin xyz="0 0.15 -0.25" rpy="0 0 0" />
-  </xacro:biped_leg> -->
+  <xacro:up_actuator_segment prefix="r_l" parent="base_link">
+    <origin xyz="-0.085 -0.0485 -0.245" rpy="0 0 0" />
+  </xacro:up_actuator_segment>
+
+  <xacro:center_leg prefix="r" parent="base_link">
+    <origin xyz="-0.032 -0.1075 -0.2365" rpy="0 0 0" />
+  </xacro:center_leg>
+
+  <xacro:up_actuator_segment prefix="r_r" parent="base_link">
+    <origin xyz="-0.085 -0.1685 -0.245" rpy="0 0 0" />
+  </xacro:up_actuator_segment>
 
   <!-- O mesmo padrão se aplica para braços e cabeça -->
 
