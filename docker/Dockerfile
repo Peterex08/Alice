@@ -9,7 +9,6 @@ RUN apt update && apt upgrade -y && \
     ros-humble-desktop-full \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-rqt* \
-    ros-humble-eigen3-cmake \
     liburdfdom-dev \
     ros-humble-urdf-tutorial \
     python3-colcon-common-extensions \
