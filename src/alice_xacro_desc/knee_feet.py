@@ -135,7 +135,7 @@ def calc_actuator_length(deg_theta_joelho=0.0, deg_phi_joelho=0.0, deg_theta_pe=
         Calcula a hipotenusa 3D entre dois pontos, descontando as hastes rígidas (offsets) no plano YZ.
         A fórmula interna resolve: L = sqrt(DX^2 + (H_YZ - offsets)^2)
         """
-        VX, VY, VZ = P_inf - P_sup
+        VX, VY, VZ = P_inf - P_sup 
         H_YZ = np.sqrt(VY**2 + VZ**2)
         return np.sqrt(VX**2 + (H_YZ - off_sup - off_inf)**2)
     
