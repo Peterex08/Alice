@@ -5,9 +5,9 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-add_executable(alice_control_node 
-  src/dk.cpp
-)
+# add_executable(alice_control_node 
+#   src/dk.cpp
+# )
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
@@ -19,7 +19,6 @@ target_include_directories(alice_control_node PUBLIC
   ${EIGEN3_INCLUDE_DIRS}
 )
 
-ament_target_dependencies(alice_control_node rclcpp urdf)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

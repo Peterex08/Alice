@@ -1,6 +1,44 @@
-build/*
-install/*
+# ROS / colcon build, install, and log directories
+build/
+install/
 log/
+**/build/
+**/install/
+**/log/
+
+# Python cache and temporary files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.cache/
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.la
+*.lo
+*.dll
+*.dylib
+*.out
+*.exe
+
+# IDE / Editor folders and files
 .vscode/
-/__pycache__/
-*.pyc
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# User-specific or temporary text files
+#running_commands.txt
