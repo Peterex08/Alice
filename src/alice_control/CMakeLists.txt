@@ -14,10 +14,42 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(urdf REQUIRED)
 
-target_include_directories(alice_control_node PUBLIC
-  ${EIGEN3_INCLUDE_DIRS}
+add_executable(test_dk 
+  src/test_dk.cpp
+  src/dk.cpp
+  src/ik.cpp
 )
+
+target_include_directories(test_dk PUBLIC
+  ${EIGEN3_INCLUDE_DIRS}
+  include
+)
+
+ament_target_dependencies(test_dk rclcpp std_msgs urdf)
+
+install(TARGETS test_dk
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+add_executable(test_ik 
+  src/test_ik.cpp
+  src/dk.cpp
+  src/ik.cpp
+)
+
+target_include_directories(test_ik PUBLIC
+  ${EIGEN3_INCLUDE_DIRS}
+  include
+)
+
+ament_target_dependencies(test_ik rclcpp std_msgs urdf)
+
+install(TARGETS test_ik
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 
 
 if(BUILD_TESTING)
