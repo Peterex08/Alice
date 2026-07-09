@@ -55,7 +55,7 @@ def get_matrices():
     Rpe = np.array([
         [1, 0, 0, 0],
         [0, np.cos(roll_pe), -np.sin(roll_pe), 0],
-        [0, np.sin(roll_pe), np.cos(roll_pe), -60.7],
+        [0, np.sin(roll_pe), np.cos(roll_pe), -61],
         [0, 0, 0, 1],
     ])
     return [Rtronco, Ptronco, Pjoelhoup, Ppe, Ppeup, Rpe]

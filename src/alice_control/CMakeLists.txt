@@ -5,19 +5,22 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# add_executable(alice_control_node 
-#   src/dk.cpp
-# )
-
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(urdf REQUIRED)
+find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
-add_executable(test_dk 
-  src/test_dk.cpp
+# ============================================================
+# Testes e nós executáveis (src/tests/)
+# ============================================================
+
+# test_dk — Testa a cinemática direta
+add_executable(test_dk
+  src/tests/test_dk.cpp
   src/dk.cpp
   src/ik.cpp
 )
@@ -33,8 +36,9 @@ install(TARGETS test_dk
   DESTINATION lib/${PROJECT_NAME}
 )
 
-add_executable(test_ik 
-  src/test_ik.cpp
+# test_ik — Testa a cinemática inversa
+add_executable(test_ik
+  src/tests/test_ik.cpp
   src/dk.cpp
   src/ik.cpp
 )
@@ -50,6 +54,25 @@ install(TARGETS test_ik
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# joint_state_publisher_node — Publica JointState com IK integrada
+add_executable(joint_state_publisher_node
+  src/tests/joint_state_publisher_node.cpp
+  src/parallel_ik.cpp
+  src/ik.cpp
+  src/dk.cpp
+)
+
+target_include_directories(joint_state_publisher_node PUBLIC
+  ${EIGEN3_INCLUDE_DIRS}
+  include
+)
+
+ament_target_dependencies(joint_state_publisher_node rclcpp std_msgs sensor_msgs urdf)
+target_link_libraries(joint_state_publisher_node Qt5::Widgets)
+
+install(TARGETS joint_state_publisher_node
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 
 if(BUILD_TESTING)

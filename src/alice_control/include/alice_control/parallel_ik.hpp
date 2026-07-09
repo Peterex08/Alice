@@ -3,23 +3,23 @@
 #include <Eigen/Dense>
 #include <vector>
 
-namespace ik {
+namespace parallel_ik {
 
-    class InvKinematics {
+    class ParallellIK {
     public:
         /**
-         * @brief Construtor da classe de cinemática inversa.
+         * @brief Construtor da classe de cinemática inversa com paralelogramo.
          */
-        InvKinematics();
+        ParallellIK();
 
         /**
-         * @brief Resolve a Cinemática Inversa Analítica para a perna do bípede.
+         * @brief Resolve a Cinemática Inversa incluindo as juntas do paralelogramo.
          * @param p_body Posição atual do tronco do robô.
          * @param R_body Orientação atual do tronco do robô.
          * @param p_foot_target Posição alvo desejada do pé.
          * @param R_foot_target Orientação alvo desejada do pé.
-         * @param joint_angles Vetor que será preenchido com as 4 juntas calculadas:
-         *                     [roll_tronco, pitch_tronco, pitch_pe, roll_pe]
+         * @param joint_angles Vetor que será preenchido com as 6 juntas calculadas:
+         *                     [roll_tronco, pitch_tronco, -pitch_tronco, pitch_pe, -pitch_pe, roll_pe]
          * @return true se a solução foi encontrada com sucesso, false caso contrário.
          */
         bool solve(
@@ -30,4 +30,4 @@ namespace ik {
             std::vector<double> & joint_angles);
     };
 
-} // namespace ik
+} // namespace parallel_ik

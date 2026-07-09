@@ -12,94 +12,102 @@
 
 namespace ik {
 
-    IkResult calc_ik_analitica_perna(double x_alvo, double y_alvo, double z_alvo, bool use_degrees) {
+    InvKinematics::InvKinematics() {}
+
+    bool InvKinematics::solve(
+        const Eigen::Vector3d & p_body,
+        const Eigen::Quaterniond & R_body,
+        const Eigen::Vector3d & p_foot_target,
+        const Eigen::Quaterniond & R_foot_target,
+        std::vector<double> & joint_angles)
+    {
         // 1. PARÂMETROS FIXOS DA GEOMETRIA (Extraídos da Cinemática Direta via URDF)
         Eigen::MatrixXd diff = dk::medirDistanciasJuntas({
             {"base_link_l_up_leg_conn_joint", "l_up_leg_conn_l_up_back_leg_joint"},
             {"l_up_leg_conn_l_up_back_leg_joint", "l_up_back_leg_l_knee_joint"},
             {"l_up_back_leg_l_knee_joint", "l_knee_l_dn_back_leg_joint"},
-            {"l_knee_l_dn_back_leg_joint", "l_dn_back_leg_l_ankle_joint"}
+            {"l_knee_l_dn_back_leg_joint", "l_dn_back_leg_l_ankle_joint"},
+            {"l_dn_back_leg_l_ankle_joint", "l_ankle_l_foot_joint"}
         });
 
-        if (diff.rows() < 4) {
+        if (diff.rows() < 5) {
             throw std::runtime_error("Erro ao obter distancias do URDF.");
         }
 
-        // Baseando na logica Python original e adaptando pro output de medirDistanciasJuntas
-        double HBb_z = diff(0, 2); 
-        double L_coxa = std::abs(diff(1, 2)); 
-        double offset_joelho_z = diff(2, 2); 
-        double L_canela = std::abs(diff(3, 2)); 
+        Eigen::MatrixXd diff_mm = diff * 1000.0;
 
-        // 2. ISOLAR O VETOR DA PERNA (Removendo o offset do quadril)
-        double X_v = x_alvo;
-        double Y_v = y_alvo;
-        double Z_v = z_alvo - HBb_z;
+        // 1. Converte o target global para o referencial local do Tronco
+        Eigen::Matrix3d R_b = R_body.toRotationMatrix();
+        Eigen::Vector3d p_rel = R_b.transpose() * (p_foot_target - p_body);
+        Eigen::Matrix3d R_rel = R_b.transpose() * R_foot_target.toRotationMatrix();
 
-        // 3. SOLVER DO ROLL DO QUADRIL (phi_joelho)
-        // Qual o angulo lateral necessario para alinhar a perna com o alvo no eixo Y?
-        double phi_j_rad = std::atan2(Y_v, -Z_v);
+        double X = p_rel.x() * 1000.0;
+        double Y = p_rel.y() * 1000.0;
+        double Z = p_rel.z() * 1000.0;
 
-        // 4. DESENROLAR PARA O PLANO 2D (Sagital)
-        // Ao "desfazer" o roll, o Y se torna 0 e a perna vira um mecanismo 2D
-        double X_2d = X_v;
-        double Z_2d = -std::sqrt(Y_v * Y_v + Z_v * Z_v); 
+        try {
+            // 2. Extrai o Roll do alvo (já que o paralelogramo trava o Pitch e Yaw)
+            double roll_target = atan2(R_rel(2, 1), R_rel(2, 2));
 
-        // Compensar o pequeno degrau de 40mm do joelho no plano Z
-        double Z_2d_eff = Z_2d - offset_joelho_z;
+            // 3. Resolve Joint 1: Roll do Tronco
+            // O desvio em Y é gerado exclusivamente pelo Roll inicial. 
+            // O offset Z do hip_roll → hip_pitch é diff_mm(0,2) ≈ -50mm
+            double hip_offset_z = diff_mm(0,2);  // -50 mm
+            double q_roll_tronco = atan2(Y, -(Z - hip_offset_z));
 
-        // 5. SOLVER DO PITCH (Plano 2D - Lei dos Cossenos)
-        // Distancia reta do quadril ate o tornozelo no plano 2D
-        double D_quadrado = X_2d * X_2d + Z_2d_eff * Z_2d_eff;
+            // 4. Calcula o vetor Z "virtual" que desceu na perna, removendo o efeito do Roll
+            double Vz = -sqrt(Y * Y + (Z - hip_offset_z) * (Z - hip_offset_z));
 
-        // Verificacao de seguranca (Singularidade / Fora de alcance)
-        double L_max = (L_coxa + L_canela) * (L_coxa + L_canela);
-        double L_min = (L_coxa - L_canela) * (L_coxa - L_canela);
-        if (D_quadrado > L_max || D_quadrado < L_min) {
-            std::cerr << "AVISO: O ponto alvo esta fora do alcance fisico da perna." << std::endl;
+            // 5. Mapeia para um problema planar 2D (Interseção de círculos)
+            // O ponto de partida do 2-link é após o hip_pitch joint.
+            // O ponto de chegada é o ankle joint (antes do foot offset).
+            // Offset constante Z que NÃO faz parte dos dois elos rotativos:
+            //   knee_offset (diff_mm(2,2) ≈ -40mm) + foot_offset (diff_mm(4,2) ≈ -50mm)
+            double knee_offset_z = diff_mm(2,2);   // -40 mm
+            double foot_offset_z = diff_mm(4,2);    // -50 mm
+            double offset_z = knee_offset_z + foot_offset_z;  // -90 mm (constantes que deslocam verticalmente)
+
+            double X_prime = -X;
+            double Y_prime = -Vz + offset_z;  // remove os offsets constantes do comprimento virtual
+
+            // Tamanhos dos elos principais: coxa (265mm) e canela (265mm)
+            double L1 = -diff_mm(1,2);  // coxa: 265 mm
+            double L2 = -diff_mm(3,2);  // canela: 265 mm
+
+            double D = sqrt(X_prime * X_prime + Y_prime * Y_prime);
+
+            // Proteção de singularidade e alcance máximo/mínimo
+            if (D > L1 + L2) { D = L1 + L2 - 1e-6; }
+            if (D < std::abs(L1 - L2)) { D = std::abs(L1 - L2) + 1e-6; }
+
+            // 6. Resolve Joint 2: Pitch do Tronco
+            double alpha = atan2(X_prime, Y_prime);
+            double cos_beta = (D * D + L1 * L1 - L2 * L2) / (2.0 * D * L1);
+            cos_beta = std::max(-1.0, std::min(1.0, cos_beta));
+            double beta = acos(cos_beta);
+
+            // alpha - beta faz o joelho dobrar para frente (direção correta).
+            double q_pitch_tronco = alpha - beta; 
+
+            // 7. Resolve Joint 3: Pitch do Pé
+            double X3_prime = X_prime - L1 * sin(q_pitch_tronco);
+            double Y3_prime = Y_prime - L1 * cos(q_pitch_tronco);
+            double q_pitch_pe = atan2(X3_prime, Y3_prime);
+
+            // 8. Resolve Joint 4: Roll do Pé
+            // Como a orientação de roll se soma (q_roll_tronco + q_roll_pe = roll_target)
+            double q_roll_pe = roll_target - q_roll_tronco;
+
+            // Limpa e popula o vetor de juntas (Retornando os 4 DOFs independentes)
+            // Caso precise replicar os motores do paralelogramo (ex: q2 e -q2), faça a atribuição após o solver.
+            joint_angles = {q_roll_tronco, q_pitch_tronco, q_pitch_pe, q_roll_pe};
+
+            return true;
+
+        } catch (const std::exception & e) {
+            std::cerr << "Erro na IK: " << e.what() << '\n';
+            return false;
         }
-
-        // C e o cosseno do angulo interno formado pela dobra do joelho
-        double C = (D_quadrado - L_coxa * L_coxa - L_canela * L_canela) / (2 * L_coxa * L_canela);
-        // Prevencao contra erros de precisao do float
-        if (C > 1.0) C = 1.0;
-        if (C < -1.0) C = -1.0;
-
-        // alpha e a diferenca relativa entre o angulo da coxa e da canela
-        double alpha = std::acos(C);
-
-        // Variaveis auxiliares para o sistema linear geometrico
-        double A = L_coxa + L_canela * std::cos(alpha);
-        double B = L_canela * std::sin(alpha);
-
-        // Resolver o Pitch da Coxa (theta_joelho)
-        double sin_theta_j = (A * X_2d - B * Z_2d_eff) / D_quadrado;
-        double cos_theta_j = (-B * X_2d - A * Z_2d_eff) / D_quadrado;
-        double theta_j_rad = std::atan2(sin_theta_j, cos_theta_j);
-
-        // Resolver o Pitch da Canela (theta_pe)
-        // Na sua arquitetura, theta_p e absoluto, entao basta subtrair alpha do quadril
-        double theta_p_rad = theta_j_rad - alpha;
-
-        // 6. MANTER O PE RETO
-        // Para que a sola do robo fique perfeitamente paralela ao chao lateralmente,
-        // o Roll do tornozelo deve ser exatamente o inverso do Roll do quadril.
-        double phi_p_rad = -phi_j_rad;
-
-        IkResult result;
-        if (use_degrees) {
-            result.theta_joelho = theta_j_rad * 180.0 / M_PI;
-            result.phi_joelho = phi_j_rad * 180.0 / M_PI;
-            result.theta_pe = theta_p_rad * 180.0 / M_PI;
-            result.phi_pe = phi_p_rad * 180.0 / M_PI;
-        } else {
-            result.theta_joelho = theta_j_rad;
-            result.phi_joelho = phi_j_rad;
-            result.theta_pe = theta_p_rad;
-            result.phi_pe = phi_p_rad;
-        }
-
-        return result;
     }
 
 } // namespace ik
