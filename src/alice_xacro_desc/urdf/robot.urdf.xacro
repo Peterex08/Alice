@@ -57,7 +57,7 @@
 
   <!-- Instanciando a Perna Esquerda -->
   <xacro:up_actuator_segment prefix="l_l" parent="base_link">
-    <origin xyz="-0.085 0.1685 -0.245" rpy="0 0 0" />
+    <origin xyz="-0.090 0.1685 -0.245" rpy="0 0 0" />
   </xacro:up_actuator_segment>
     
   <xacro:center_leg prefix="l" parent="base_link">
@@ -65,12 +65,12 @@
   </xacro:center_leg>
 
   <xacro:up_actuator_segment prefix="l_r" parent="base_link">
-    <origin xyz="-0.085 0.0485 -0.245" rpy="0 0 0" />
+    <origin xyz="-0.090 0.0465 -0.245" rpy="0 0 0" />
   </xacro:up_actuator_segment>
 
   <!-- Instanciando a Perna Esquerda -->
   <xacro:up_actuator_segment prefix="r_l" parent="base_link">
-    <origin xyz="-0.085 -0.0485 -0.245" rpy="0 0 0" />
+    <origin xyz="-0.090 -0.0465 -0.245" rpy="0 0 0" />
   </xacro:up_actuator_segment>
 
   <xacro:center_leg prefix="r" parent="base_link">
@@ -78,7 +78,7 @@
   </xacro:center_leg>
 
   <xacro:up_actuator_segment prefix="r_r" parent="base_link">
-    <origin xyz="-0.085 -0.1685 -0.245" rpy="0 0 0" />
+    <origin xyz="-0.090 -0.1685 -0.245" rpy="0 0 0" />
   </xacro:up_actuator_segment>
 
   <!-- O mesmo padrão se aplica para braços e cabeça -->
